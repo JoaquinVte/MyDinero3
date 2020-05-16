@@ -6,7 +6,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -136,6 +138,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override protected void onResume() {
+        super.onResume();
+
+        Configuration config = MainActivity.this.getResources().getConfiguration();
+        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toast.makeText(this, "Orientation portrait", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Orientation landscape", Toast.LENGTH_SHORT).show();
+        }
+
+        Vibrator vibrador=((Vibrator) getSystemService(VIBRATOR_SERVICE));
+        if (!vibrador.hasVibrator()) {
+            Toast.makeText(getApplicationContext(), "No vibrador", Toast.LENGTH_LONG).show();
+        }else{
+            vibrador.vibrate(1000);
+        }
     }
     
     private String cargarFichero(String file){
