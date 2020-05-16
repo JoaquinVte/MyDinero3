@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">myDinero3</string>
+    <string name="texto">Introduïsca quantitat en pessetes</string>
+    <string name="texto_boton">CONVERTIR</string>
+    <string name="texto_image_description">App image</string>
+    <string name="texto_boton_port">PORT</string>
+    <string name="texto_boton_chdolar">CHDOLAR</string>
+    <string name="texto_boton_chlibra">CHDLIBRA</string>
+    <string name="hint_chdolar">$->€</string>
+    <string name="hint_chlibra">£->€</string>
+
+</resources>
